@@ -1,24 +1,8 @@
-<!doctype html>
-<html>
-<head>
-    <title>Buttons.less: Documentation</title>
-    
-    <link rel="stylesheet/less" type="text/css" href="styles/lessdoc.less">
-    <link rel="stylesheet/less" type="text/css" href="buttons.less">
-</head>
-<body>
-<div id="ld-wrap">
-    
-<section class="ld-comment">
-    <h1>Buttons</h1>
-    
-    <p>Last edited 7/29/11</p>
-    <p>Authors: Dominick</p>
-    
-    <h2>Imports and variables</h2>
-</section>
+// * Buttons
+// Last edited 7/28/11 
+// Authors: Dominick
 
-    <pre class="ld-source"><code>
+// ** Imports and variables
 @import "lib.less";
 
 @museo-sans: 'museo-sans-1', 'museo-sans-2';
@@ -27,45 +11,33 @@
 
 
 menu { color: #d9d9d9; }
-</pre></code>
+menu ul { margin: 0px; padding:0px; list-style-type: none;}
+menu ul li { display:inline-block;}
 
-    <section class="ld-comment">
-        <h2>Button examples</h2>
+// ** Bare buttons
+// These buttons have very little styling, but do remove any text and float next to each other.
+//   
+//  Icons: star, new_page, settings, settings_extra, lock, stop, grid, trash, more, text_color, bold, italic, underline, strike, align_left, align_center, align_right, align_justify, list, border, link, unlink, plus, minus, eraser, outdent, indent, check, left, right, extra, star, remove, image_right, image_left, image_top, image_bottom
+//  Style: btn1, btn2, btnbare
+//  Content: icon, text
+//  State: active, 
+//  Color: green, blue,  
+//  
+//  <menu> 
+//  	<ul> 
+//  		<li> 
+//  			<ul class="w-{{style}}-group"> 
+//  				<li><a class="w-{{style}} w-{{style}}-icon 	                  w-btnstates w-icon-{{icon}}" href="#"><span>Icon</span></a></li> 
+//  				<li><a class="w-{{style}} w-{{style}}-icon	w-{{style}}-text 	w-btnstates w-icon-{{icon}}" href="#"><span>Icon + Text</span></a></li> 
+//  				<li><a class="w-{{style}} 				  	w-{{style}}-text 	w-btnstates w-icon-{{icon}} {{active}}"><span>Text</span></a></li> 
+//  				<li class="last-child"><a class="w-btn1 w-{{style}}-icon w-{{style}}-text w-btnstates w-icon-{{icon}}" href="/s/panel"><span>Stuff</span></a></li> 
+//  			</ul> 
+//  		</li> 
+//  		<li><a class="w-{{style}} w-{{style}}-icon w-btnstates w-icon-question" href="#"><span>?</span></a></li> 
+//  		<li><a class="w-{{style}} w-{{style}}-{{color}}" href="#"><span>With color</span></a></li> 
+//  	</ul> 
+//  </menu>
 
-        <dl>
-        <dt>icon</dt>
-        <dd>new_page, settings, settings_extra, lock, stop, grid, trash, more, text_color, bold, italic, underline, strike, align_left, align_center, align_right, align_justify, list, border, link, unlink, plus, minus, eraser, outdent, indent, check, left, right, extra, star, remove, image_right, image_left, image_top, image_bottom</dd>
-        <dt>style</dt>
-        <dd>btn1, btn2, btnbare</dd>
-        <dt>content</dt>
-        <dd>icon, text</dd>
-        <dt>state</dt>
-        <dd> , active</dd>
-        <dt>color</dt>
-        <dd> , green</dd>
-        </dl>
-    
-    <pre class="ld-example"><code>   
-<menu> 
- <ul> 
-  <li> 
-   <ul class="w-{{style}}-group"> 
-   	<li><a class="w-{{style}} w-{{style}}-icon 						w-btnstates w-icon-{{icon}}" href="#"><span>Icon</span></a></li> 
-   	<li><a class="w-{{style}} w-{{style}}-icon	w-{{style}}-text 	w-btnstates w-icon-{{icon}}" href="#"><span>Icon + Text</span></a></li> 
-   	<li><a class="w-{{style}} 				  	w-{{style}}-text 	w-btnstates w-icon-{{icon}} {{active}}"><span>Text</span></a></li> 
-   	<li class="last-child"><a class="w-btn1 w-{{style}}-icon w-{{style}}-text w-btnstates w-icon-{{icon}}" href="/s/panel"><span>Stuff</span></a></li> 
-   </ul> 
-  </li> 
-  <li><a class="w-{{style}} w-{{style}}-icon w-btnstates w-icon-question" href="#"><span>?</span></a></li> 
-  <li><a class="w-{{style}} w-{{style}}-{{color}}" href="#"><span>With color</span></a></li> 
- </ul> 
-</menu>
-    </code></pre>
-    
-
-    </section>
-    
-    <pre class="ld-source"><code>
 @btnbare-height: 22px;
 .w-btnbare {
 	display: inline-block; text-decoration: none;
@@ -611,12 +583,3 @@ iframe.overflowHidden { overflow: hidden; }
 
 
 .darkbottom { position: absolute; bottom: 0; width: 100%; background: #2f2f2f; text-align: center; }
-    </code></pre>
-</div>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="lib/less-1.1.3.min.js"></script>
-<script src="lib/hiless.js"></script>
-<script src="lib/handlebars.1.0.0.beta.3.js"></script>
-<script src="lessdoc.js"></script>
-</body>
