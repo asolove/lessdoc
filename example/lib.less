@@ -1,0 +1,70 @@
+.border-radius(@radius) {
+  -moz-border-radius: @radius; 
+ -webkit-border-radius: @radius; 
+         border-radius: @radius;
+}
+
+.left-border-radius(@radius: 10px) {
+  -moz-border-radius-top-left: @radius;
+  -webkit-border-top-left-radius: @radius;
+  border-top-left-radius: @radius;
+
+  -moz-border-radius-bottom-left: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+.right-border-radius(@radius: 10px) {
+  -moz-border-radius-top-right: @radius;
+  -webkit-border-top-right-radius: @radius;
+  border-top-right-radius: @radius;
+
+  -moz-border-radius-bottom-right: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+.top-border-radius(@radius: 10px) {
+  -moz-border-radius-top-left: @radius;
+  -webkit-border-top-left-radius: @radius;
+  border-top-left-radius: @radius;
+
+  -moz-border-radius-top-right: @radius;
+  -webkit-border-top-right-radius: @radius;
+  border-top-right-radius: @radius;
+}
+.bottom-border-radius(@radius: 10px) {
+  -moz-border-radius-bottom-left: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+
+  -moz-border-radius-bottom-right: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+  border-bottom-right-radius: @radius;
+}
+.border-radius-bl(@radius) {
+  -moz-border-radius-bottom-left: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  border-bottom-left-radius: @radius;
+}
+
+.rotate(@val) {
+   -moz-transform: rotate(@val);
+-webkit-transform: rotate(@val);
+    transform: rotate(@val);
+}
+
+
+.box-shadow(@val) {
+   -moz-box-shadow: @val; 
+-webkit-box-shadow: @val; 
+        box-shadow: @val;
+}
+
+.gradient-background(@start, @stop) {
+  background-color: @start;
+  background-image: -moz-linear-gradient(top, @start, @stop); 
+  background-image: -o-linear-gradient(top, @start, @stop); 
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, @start),color-stop(1, @stop)); 
+  background-image: -webkit-linear-gradient(@start, @stop); 
+  background-image: linear-gradient(top, @start, @stop);
+  /*filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorStr='@{start}', EndColorStr='@{stop}')";*/
+}
