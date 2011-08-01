@@ -81,11 +81,31 @@ Example.prototype.optionChange = function(e){
 Example.prototype.viewSource = function(e){
 	this.elements.code.toggleClass("ld-visible");
 	$("html,body").animate({scrollTop: this.elements.code.scrollTop() });
-}
+};
 
 jQuery(function(){
 	var examples = [];
 	$(".ld-comment").each(function(){
 		examples.push(new Example(this));
 	});
+});
+
+
+
+var SourceController = function(){
+	$(".ld-source code")
+		.attr("contenteditable", true)
+		.blur($.proxy(this, "update"));
+};
+
+SourceController.prototype.update = function(){
+	var stylesheet = this.stylesheet;
+	new(less.Parser)().parse($(".ld-source code").text(), function(e, tree){ 
+		$("style").last().html(tree.toCSS());
+		console.log($("style").last().html());
+	});
+};
+
+jQuery(function(){
+	window.sourceController = new SourceController();
 });
